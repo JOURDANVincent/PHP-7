@@ -23,15 +23,29 @@
     </p>
 
     <?php
+
+        define("TYPE", "application/pdf");
         
-        if (!empty($_GET['gender']) AND !empty($_GET['lastname']) AND !empty($_GET['firstname']) AND !empty($_GET['file']) )   // si age existe
-        {
-            echo '<br> Bonjour ' .$_GET['gender']. ' ' .$_GET['lastname']. ' ' .$_GET['firstname']. '<br>';
-            $nameFile = $_GET['file'];
-            echo 'Nom du fichier: ' .$nameFile. '<br>';
-            echo 'Extension du fichier: ' .pathinfo($nameFile, PATHINFO_EXTENSION). '<br>';
-            echo $nameFile;
-        }
+        if (!empty($_POST['gender']) AND !empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_FILES['file']) )   // si age existe
+        {   
+            $gender = $_POST['gender'];
+            $lastname = $_POST['lastname'];
+            $firstname = $_POST['firstname'];
+            $nameFile = $_FILES['file']['name'];
+            $typeFile = $_FILES['file']['type'];
+            //var_dump($typeFile);
+
+            echo '<br> Bonjour ' . $gender . ' ' . $lastname . ' ' . $firstname . '<br>';
+            echo 'Nom du fichier: ' . $nameFile . '<br>';
+
+            //Contrôle du MIME
+            if ($typeFile === TYPE) {
+                echo 'Le type MIME correspond !!';
+            } else {
+                echo 'ACHTUNG !!!';
+            }
+            
+        } 
         else   // sinon l'indiquer
         {  // ouverture formulaire
     ?>
@@ -40,7 +54,7 @@
         <div class="row justify-content-center">
             <div class="col-6 mt-5">
 
-                <form action="index.php" method="get">
+                <form action="index.php" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
 
@@ -56,7 +70,7 @@
 
                         <!-- Inout dépôt de fichier -->
                         <label for="file"></label>
-                        <input type="file"class="mb-3" name="file" id="file">
+                        <input type="file" class="mb-3" name="file" id="file">
 
                         <!-- btn submit -->
                         <div class="text-center">

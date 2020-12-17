@@ -11,35 +11,36 @@
 
 <body>
 
-    <h1>Partie 7 - ex5</h1>
-
-    <p>
-        Créer un formulaire sur la page index.php avec :  
-        Une liste déroulante pour la civilité (Mr ou Mme)
-        Un champ texte pour le nom
-        Un champ texte pour le prénom 
-
-        Ce formulaire doit rediriger vers la page index.php. 
-        Vous avez le choix de la méthode.
-    </p>
-
     <div class="container">
+
+        <h1 class=mt-5>Partie 7 - ex5</h1>
+
+        <p>
+            Créer un formulaire sur la page index.php avec :  
+            Une liste déroulante pour la civilité (Mr ou Mme)
+            Un champ texte pour le nom
+            Un champ texte pour le prénom 
+
+            Ce formulaire doit rediriger vers la page index.php. 
+            Vous avez le choix de la méthode.
+        </p>
+
         <div class="row justify-content-center">
+
             <div class="col-6 mt-5">
 
-                <form action="index.php" method="post">
+                <form action="" method="get">
 
                     <div class="form-group">
-                        <label for="selecta">Example select</label>
-                        <select class="form-control" id="selecta">
-                            <option></option>
+                        <select class="form-control" name="gender" id="selecta">
+                            <option>your gender..</option>
                             <option value="Mister">Mister</option>
                             <option value="Miss">Miss</option>
                         </select>
                     </div>
 
-                    <input type="text" class='form-control mb-3' name="lastname" placeholder="your lastname">
-                    <input type="text" class='form-control mb-3' name="firstname" placeholder="your firstname">
+                    <input type="text" class='form-control mb-3' name="lastname" placeholder="your lastname..">
+                    <input type="text" class='form-control mb-3' name="firstname" placeholder="your firstname..">
                     <div class="text-center">
                         <input type="submit" class="btn btn-dark px-5" value="SUBMIT">
                     </div>

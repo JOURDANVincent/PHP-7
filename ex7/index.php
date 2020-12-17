@@ -11,13 +11,16 @@
 
 <body>
 
-    <h1>Partie 7 - ex7</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-8">
 
-    <p>
-        Au formulaire de l'exercice 5, ajouter un champ d'envoi de fichier. 
-        Afficher en plus de ce qui est demandé à l'exercice 6, 
-        le nom et l'extension du fichier.  
-    </p>
+                <h1>Partie 7 - ex7</h1>
+                <p>
+                    Au formulaire de l'exercice 5, ajouter un champ d'envoi de fichier. 
+                    Afficher en plus de ce qui est demandé à l'exercice 6, 
+                    le nom et l'extension du fichier.  
+                </p>
 
     <?php
         if (!empty($_GET['gender']) AND !empty($_GET['lastname']) AND !empty($_GET['firstname']) AND !empty($_GET['file']) )   // si age existe
@@ -30,6 +33,10 @@
         {  // ouverture formulaire
     ?>
 
+            </div> <!-- fin col-8 -->
+        </div> <!-- fin row -->
+    </div> <!-- fin container -->
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-6 mt-5">
@@ -38,9 +45,8 @@
 
                     <div class="form-group">
 
-                        <label for="gender">Gender select</label>
                         <select class="form-control mb-3" id="gender" name="gender">
-                            <option></option>
+                            <option>your gender</option>
                             <option value="Mister">Mister</option>
                             <option value="Miss">Miss</option>
                         </select>
@@ -48,9 +54,9 @@
                         <input type="text" class='form-control mb-3' name="lastname" placeholder="your lastname">
                         <input type="text" class='form-control mb-3' name="firstname" placeholder="your firstname">
 
-                        <!-- Inout dépôt de fichier -->
+                        <!-- Input dépôt de fichier -->
                         <label for="file"></label>
-                        <input type="file"class="mb-3" name="file" id="file">
+                        <input type="file" class="form-control mb-3" name="file" id="file">
 
                         <!-- btn submit -->
                         <div class="text-center">
