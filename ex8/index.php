@@ -24,6 +24,7 @@
 
     <?php
 
+        // déclaration constante pout type MIME
         define("TYPE", "application/pdf");
         
         if (!empty($_POST['gender']) AND !empty($_POST['lastname']) AND !empty($_POST['firstname']) AND !empty($_FILES['file']) )   // si age existe
